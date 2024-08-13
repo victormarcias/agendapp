@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0409C5DD2C6BF48400EB5CE1 /* sort-xcode-project-files.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = "sort-xcode-project-files.pl"; sourceTree = "<group>"; };
 		0465BB082C6BB3DE00AF9031 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaApp.swift; sourceTree = "<group>"; };
 		0465BB0D2C6BB3DE00AF9031 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0409C5DC2C6BF48400EB5CE1 /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				0409C5DD2C6BF48400EB5CE1 /* sort-xcode-project-files.pl */,
+			);
+			path = Script;
+			sourceTree = "<group>";
+		};
 		0465BAFF2C6BB3DE00AF9031 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +84,7 @@
 				0465BB1A2C6BB4AC00AF9031 /* Presentation */,
 				0465BB112C6BB3DF00AF9031 /* Preview Content */,
 				0465BB1B2C6BB4B400AF9031 /* Resources */,
+				0409C5DC2C6BF48400EB5CE1 /* Script */,
 			);
 			path = Agenda;
 			sourceTree = "<group>";
@@ -99,11 +109,11 @@
 		0465BB1A2C6BB4AC00AF9031 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */,
-				0465BB0D2C6BB3DE00AF9031 /* ContentView.swift */,
 				0465BB1D2C6BBD2700AF9031 /* CalendarView */,
 				0465BB1E2C6BBD2D00AF9031 /* CartView */,
 				0465BB1C2C6BBD2000AF9031 /* TaskView */,
+				0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */,
+				0465BB0D2C6BB3DE00AF9031 /* ContentView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -146,9 +156,9 @@
 		0465BB292C6BC08400AF9031 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0465BB302C6BC0E200AF9031 /* CalendarItem.swift */,
 				0465BB2C2C6BC0AF00AF9031 /* CartItem.swift */,
 				0465BB2E2C6BC0BF00AF9031 /* TaskItem.swift */,
-				0465BB302C6BC0E200AF9031 /* CalendarItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +181,7 @@
 				0465BB042C6BB3DE00AF9031 /* Sources */,
 				0465BB052C6BB3DE00AF9031 /* Frameworks */,
 				0465BB062C6BB3DE00AF9031 /* Resources */,
+				0409C5DB2C6BF3D200EB5CE1 /* Sort Files */,
 			);
 			buildRules = (
 			);
@@ -219,30 +230,52 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0465BB132C6BB3DF00AF9031 /* Preview Assets.xcassets in Resources */,
-				0465BB342C6BE50300AF9031 /* Groceries.json in Resources */,
 				0465BB102C6BB3DF00AF9031 /* Assets.xcassets in Resources */,
+				0465BB342C6BE50300AF9031 /* Groceries.json in Resources */,
+				0465BB132C6BB3DF00AF9031 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0409C5DB2C6BF3D200EB5CE1 /* Sort Files */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Sort Files";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    perl \"./Agenda/Script/sort-xcode-project-files.pl\" \"Agenda.xcodeproj\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0465BB042C6BB3DE00AF9031 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0465BB2B2C6BC09D00AF9031 /* CalendarViewModel.swift in Sources */,
-				0465BB2F2C6BC0BF00AF9031 /* TaskItem.swift in Sources */,
-				0465BB0E2C6BB3DE00AF9031 /* ContentView.swift in Sources */,
-				0465BB262C6BBD8F00AF9031 /* TaskViewModel.swift in Sources */,
-				0465BB282C6BBDB900AF9031 /* CartViewModel.swift in Sources */,
-				0465BB2D2C6BC0AF00AF9031 /* CartItem.swift in Sources */,
 				0465BB0C2C6BB3DE00AF9031 /* AgendaApp.swift in Sources */,
-				0465BB222C6BBD5B00AF9031 /* CartView.swift in Sources */,
-				0465BB242C6BBD6500AF9031 /* TaskView.swift in Sources */,
-				0465BB202C6BBD5400AF9031 /* CalendarView.swift in Sources */,
 				0465BB312C6BC0E200AF9031 /* CalendarItem.swift in Sources */,
+				0465BB202C6BBD5400AF9031 /* CalendarView.swift in Sources */,
+				0465BB2B2C6BC09D00AF9031 /* CalendarViewModel.swift in Sources */,
+				0465BB2D2C6BC0AF00AF9031 /* CartItem.swift in Sources */,
+				0465BB222C6BBD5B00AF9031 /* CartView.swift in Sources */,
+				0465BB282C6BBDB900AF9031 /* CartViewModel.swift in Sources */,
+				0465BB0E2C6BB3DE00AF9031 /* ContentView.swift in Sources */,
+				0465BB2F2C6BC0BF00AF9031 /* TaskItem.swift in Sources */,
+				0465BB242C6BBD6500AF9031 /* TaskView.swift in Sources */,
+				0465BB262C6BBD8F00AF9031 /* TaskViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +319,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -349,7 +382,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -384,6 +417,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,9 +425,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pragman86.Agenda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -413,6 +450,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,9 +458,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pragman86.Agenda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

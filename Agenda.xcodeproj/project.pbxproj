@@ -17,7 +17,7 @@
 		0465BB262C6BBD8F00AF9031 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB252C6BBD8F00AF9031 /* TaskViewModel.swift */; };
 		0465BB282C6BBDB900AF9031 /* GroceriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB272C6BBDB900AF9031 /* GroceriesViewModel.swift */; };
 		0465BB2B2C6BC09D00AF9031 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB2A2C6BC09D00AF9031 /* CalendarViewModel.swift */; };
-		0465BB2D2C6BC0AF00AF9031 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB2C2C6BC0AF00AF9031 /* CartItem.swift */; };
+		0465BB2D2C6BC0AF00AF9031 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB2C2C6BC0AF00AF9031 /* GroceryItem.swift */; };
 		0465BB2F2C6BC0BF00AF9031 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB2E2C6BC0BF00AF9031 /* TaskItem.swift */; };
 		0465BB312C6BC0E200AF9031 /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB302C6BC0E200AF9031 /* CalendarItem.swift */; };
 		0465BB342C6BE50300AF9031 /* Groceries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0465BB332C6BE50300AF9031 /* Groceries.json */; };
@@ -38,7 +38,7 @@
 		0465BB252C6BBD8F00AF9031 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		0465BB272C6BBDB900AF9031 /* GroceriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesViewModel.swift; sourceTree = "<group>"; };
 		0465BB2A2C6BC09D00AF9031 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
-		0465BB2C2C6BC0AF00AF9031 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		0465BB2C2C6BC0AF00AF9031 /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
 		0465BB2E2C6BC0BF00AF9031 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		0465BB302C6BC0E200AF9031 /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
 		0465BB332C6BE50300AF9031 /* Groceries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Groceries.json; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				0465BB302C6BC0E200AF9031 /* CalendarItem.swift */,
-				0465BB2C2C6BC0AF00AF9031 /* CartItem.swift */,
+				0465BB2C2C6BC0AF00AF9031 /* GroceryItem.swift */,
 				0465BB2E2C6BC0BF00AF9031 /* TaskItem.swift */,
 			);
 			path = Model;
@@ -278,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "perl \"./Agenda/Script/sort-xcode-project-files.pl\" \"Agenda.xcodeproj\"\n";
+			shellScript = "#perl \"./Agenda/Script/sort-xcode-project-files.pl\" \"Agenda.xcodeproj\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -291,12 +291,12 @@
 				0465BB312C6BC0E200AF9031 /* CalendarItem.swift in Sources */,
 				0465BB202C6BBD5400AF9031 /* CalendarView.swift in Sources */,
 				0465BB2B2C6BC09D00AF9031 /* CalendarViewModel.swift in Sources */,
-				0465BB2D2C6BC0AF00AF9031 /* CartItem.swift in Sources */,
 				04B150612C7B92DA00942A1C /* CheckmarkView.swift in Sources */,
 				0465BB0E2C6BB3DE00AF9031 /* ContentView.swift in Sources */,
 				04D191CB2C7B8DB800962B0D /* GroceriesItemView.swift in Sources */,
 				0465BB222C6BBD5B00AF9031 /* GroceriesView.swift in Sources */,
 				0465BB282C6BBDB900AF9031 /* GroceriesViewModel.swift in Sources */,
+				0465BB2D2C6BC0AF00AF9031 /* GroceryItem.swift in Sources */,
 				0465BB2F2C6BC0BF00AF9031 /* TaskItem.swift in Sources */,
 				0465BB242C6BBD6500AF9031 /* TaskView.swift in Sources */,
 				0465BB262C6BBD8F00AF9031 /* TaskViewModel.swift in Sources */,

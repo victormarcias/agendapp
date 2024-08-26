@@ -18,9 +18,6 @@ struct CheckmarkView: View {
                 Image(systemName: "checkmark.circle.fill")
                     .foregroundColor(.green)
                     .font(.system(size: size + border, weight: .bold))
-            } else {
-                Circle()
-                    .stroke(Color.gray, lineWidth: border)
             }
         }
         .frame(width: size, height: size)

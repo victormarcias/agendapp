@@ -9,51 +9,38 @@ import Combine
 import Foundation
 
 final class GroceriesViewModel: ObservableObject {
-    @Published var items: CartList = [:]
+    @Published var items: [GroceryItem] = []
     
-    // All items together
-    var allItems: CartList {
-        [
-            "All": items
-                .flatMap { $0.value }
-                .sorted { $0.title < $1.title || $0.isChecked && !$1.isChecked }
-        ]
-    }
-    
-    // All items in Categories
-    var categorizedItems: CartList {
+    var sortedItems: [GroceryItem] {
         items
-            .mapValues { items in
-                items.sorted { $0.isChecked && !$1.isChecked }
-            }
+            .sorted { $0.title < $1.title }
     }
     
     init() {
-        loadItems()
+        loadStoredItems()
     }
     
-    func selectItem(_ item: CartItem) {
-        
+    func selectItem(_ item: GroceryItem) {
+        if let index = items.firstIndex(where: { $0.id == item.id }) {
+            var mutableItem = item
+            mutableItem.toggle()
+            items[index] = mutableItem
+            saveItems()
+        }
     }
-//    func toggleCheck(for item: CartItem) {
-//        if let index = items.firstIndex(where: { $0.id == item.id }) {
-//            items[index].isChecked.toggle()
-//            saveItems()
-//        }
-//    }
     
-    private func loadItems() {
+    private func loadStoredItems() {
         // Cargar los items desde UserDefaults
         if let data = UserDefaults.standard.data(forKey: "cartItems"),
-           let decoded = try? JSONDecoder().decode(CartList.self, from: data) {
+           let decoded = try? JSONDecoder().decode([GroceryItem].self, from: data) {
             self.items = decoded
             return
         }
         
         // Sino el Template
         // Uso de la función para cargar el archivo JSON
-        if let categories = loadCategories(from: "Groceries") {
-            self.items = categories
+        if let items = loadTemplateItems(from: "Groceries") {
+            self.items = items
         }
     }
     
@@ -68,7 +55,7 @@ final class GroceriesViewModel: ObservableObject {
 // MARK: - Template
 extension GroceriesViewModel {
     
-    func loadCategories(from fileName: String) -> CartList? {
+    func loadTemplateItems(from fileName: String) -> [GroceryItem]? {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             print("Archivo no encontrado")
             return nil
@@ -76,8 +63,8 @@ extension GroceriesViewModel {
         
         do {
             let data = try Data(contentsOf: url)
-            let categories = try JSONDecoder().decode(CartList.self, from: data)
-            return categories
+            let categories = try JSONDecoder().decode([String: [GroceryItem]].self, from: data)
+            return categories["Template"]
         } catch {
             print("Error al decodificar JSON: \(error)")
             return nil

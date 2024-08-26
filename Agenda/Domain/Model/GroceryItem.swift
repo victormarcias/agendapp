@@ -7,16 +7,28 @@
 
 import Foundation
 
-typealias CartList = [String: [CartItem]]
-
-struct CartItem: Identifiable, Codable {
+struct GroceryItem: Identifiable, Codable {
     let id: UUID
+    let category: Int
     let title: String
     let emoji: String
-    let isChecked: Bool
+    var isChecked: Bool
     
-    init(id: UUID = UUID(), title: String, emoji: String, isChecked: Bool = false) {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case category = "cat"
+        case title
+        case emoji
+        case isChecked
+    }
+    
+    init(id: UUID = UUID(),
+         category: Int,
+         title: String,
+         emoji: String,
+         isChecked: Bool = false) {
         self.id = id
+        self.category = category
         self.title = title
         self.emoji = emoji
         self.isChecked = isChecked
@@ -26,8 +38,13 @@ struct CartItem: Identifiable, Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
+        self.category = try container.decode(Int.self, forKey: .category)
         self.title = try container.decode(String.self, forKey: .title)
         self.emoji = try container.decode(String.self, forKey: .emoji)
         self.isChecked = try container.decodeIfPresent(Bool.self, forKey: .isChecked) ?? false
+    }
+    
+    mutating func toggle() {
+        isChecked = !isChecked
     }
 }

@@ -10,8 +10,8 @@ import SwiftUI
 struct GroceriesView: View {
     @ObservedObject var viewModel = GroceriesViewModel()
     
-    private var list: CartList {
-        viewModel.allItems
+    private var list: [String: [GroceryItem]] {
+        ["All": viewModel.sortedItems]
     }
     
     private var columnsGuide = [
@@ -29,11 +29,15 @@ struct GroceriesView: View {
                         if let items = list[key] {
                             ForEach(items) { item in
                                 GroceriesItemView(item: item)
+                                    .onTapGesture {
+                                        viewModel.selectItem(item)
+                                    }
                             }
                         }
                     }
                 }
             }
+            .id(UUID())
         }
     }
 }

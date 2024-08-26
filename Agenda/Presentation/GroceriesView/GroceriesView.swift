@@ -28,16 +28,16 @@ struct GroceriesView: View {
                     Section(header: Text(key).font(.headline)) {
                         if let items = list[key] {
                             ForEach(items) { item in
-                                GroceriesItemView(item: item)
-                                    .onTapGesture {
-                                        viewModel.selectItem(item)
-                                    }
+                                GroceriesItemView(item: item) {
+                                    viewModel.selectItem(item)
+                                }
                             }
                         }
                     }
                 }
             }
             .id(UUID())
+            .padding(.vertical, 20)
         }
     }
 }

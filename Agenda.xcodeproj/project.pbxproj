@@ -23,6 +23,7 @@
 		0465BB342C6BE50300AF9031 /* Groceries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0465BB332C6BE50300AF9031 /* Groceries.json */; };
 		04B150612C7B92DA00942A1C /* CheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B150602C7B92DA00942A1C /* CheckmarkView.swift */; };
 		04D191CB2C7B8DB800962B0D /* GroceriesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D191CA2C7B8DB800962B0D /* GroceriesItemView.swift */; };
+		04EFD88B2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFD88A2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		0465BB332C6BE50300AF9031 /* Groceries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Groceries.json; sourceTree = "<group>"; };
 		04B150602C7B92DA00942A1C /* CheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkView.swift; sourceTree = "<group>"; };
 		04D191CA2C7B8DB800962B0D /* GroceriesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesItemView.swift; sourceTree = "<group>"; };
+		04EFD88A2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				04B150602C7B92DA00942A1C /* CheckmarkView.swift */,
+				04EFD88A2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				0465BB222C6BBD5B00AF9031 /* GroceriesView.swift in Sources */,
 				0465BB282C6BBDB900AF9031 /* GroceriesViewModel.swift in Sources */,
 				0465BB2D2C6BC0AF00AF9031 /* GroceryItem.swift in Sources */,
+				04EFD88B2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift in Sources */,
 				0465BB2F2C6BC0BF00AF9031 /* TaskItem.swift in Sources */,
 				0465BB242C6BBD6500AF9031 /* TaskView.swift in Sources */,
 				0465BB262C6BBD8F00AF9031 /* TaskViewModel.swift in Sources */,

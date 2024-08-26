@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class CalendarViewModel: ObservableObject {
+final class CalendarViewModel: ObservableObject {
     @Published var items: [CalendarItem] = []
     
     init() {

@@ -12,17 +12,17 @@
 		0465BB102C6BB3DF00AF9031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0465BB0F2C6BB3DF00AF9031 /* Assets.xcassets */; };
 		0465BB132C6BB3DF00AF9031 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0465BB122C6BB3DF00AF9031 /* Preview Assets.xcassets */; };
 		0465BB202C6BBD5400AF9031 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB1F2C6BBD5400AF9031 /* CalendarView.swift */; };
-		0465BB222C6BBD5B00AF9031 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB212C6BBD5B00AF9031 /* CartView.swift */; };
+		0465BB222C6BBD5B00AF9031 /* GroceriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB212C6BBD5B00AF9031 /* GroceriesView.swift */; };
 		0465BB242C6BBD6500AF9031 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB232C6BBD6500AF9031 /* TaskView.swift */; };
 		0465BB262C6BBD8F00AF9031 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB252C6BBD8F00AF9031 /* TaskViewModel.swift */; };
-		0465BB282C6BBDB900AF9031 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB272C6BBDB900AF9031 /* CartViewModel.swift */; };
+		0465BB282C6BBDB900AF9031 /* GroceriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB272C6BBDB900AF9031 /* GroceriesViewModel.swift */; };
 		0465BB2B2C6BC09D00AF9031 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB2A2C6BC09D00AF9031 /* CalendarViewModel.swift */; };
 		0465BB2D2C6BC0AF00AF9031 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB2C2C6BC0AF00AF9031 /* CartItem.swift */; };
 		0465BB2F2C6BC0BF00AF9031 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB2E2C6BC0BF00AF9031 /* TaskItem.swift */; };
 		0465BB312C6BC0E200AF9031 /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB302C6BC0E200AF9031 /* CalendarItem.swift */; };
 		0465BB342C6BE50300AF9031 /* Groceries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0465BB332C6BE50300AF9031 /* Groceries.json */; };
 		04B150612C7B92DA00942A1C /* CheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B150602C7B92DA00942A1C /* CheckmarkView.swift */; };
-		04D191CB2C7B8DB800962B0D /* CartItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D191CA2C7B8DB800962B0D /* CartItemView.swift */; };
+		04D191CB2C7B8DB800962B0D /* GroceriesItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D191CA2C7B8DB800962B0D /* GroceriesItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,17 +33,17 @@
 		0465BB0F2C6BB3DF00AF9031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0465BB122C6BB3DF00AF9031 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0465BB1F2C6BBD5400AF9031 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		0465BB212C6BBD5B00AF9031 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		0465BB212C6BBD5B00AF9031 /* GroceriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesView.swift; sourceTree = "<group>"; };
 		0465BB232C6BBD6500AF9031 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		0465BB252C6BBD8F00AF9031 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
-		0465BB272C6BBDB900AF9031 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		0465BB272C6BBDB900AF9031 /* GroceriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesViewModel.swift; sourceTree = "<group>"; };
 		0465BB2A2C6BC09D00AF9031 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		0465BB2C2C6BC0AF00AF9031 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		0465BB2E2C6BC0BF00AF9031 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		0465BB302C6BC0E200AF9031 /* CalendarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
 		0465BB332C6BE50300AF9031 /* Groceries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Groceries.json; sourceTree = "<group>"; };
 		04B150602C7B92DA00942A1C /* CheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkView.swift; sourceTree = "<group>"; };
-		04D191CA2C7B8DB800962B0D /* CartItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemView.swift; sourceTree = "<group>"; };
+		04D191CA2C7B8DB800962B0D /* GroceriesItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0465BB192C6BB4A600AF9031 /* Data */,
+				04B5B8E82C7CF86000351154 /* Domain */,
 				0465BB1A2C6BB4AC00AF9031 /* Presentation */,
 				0465BB112C6BB3DF00AF9031 /* Preview Content */,
 				0465BB1B2C6BB4B400AF9031 /* Resources */,
@@ -105,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				0465BB322C6BE4DD00AF9031 /* Json */,
-				0465BB292C6BC08400AF9031 /* Model */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -114,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				0465BB1D2C6BBD2700AF9031 /* CalendarView */,
-				0465BB1E2C6BBD2D00AF9031 /* CartView */,
 				04D191CC2C7B925900962B0D /* Components */,
+				0465BB1E2C6BBD2D00AF9031 /* GroceriesView */,
 				0465BB1C2C6BBD2000AF9031 /* TaskView */,
 				0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */,
 				0465BB0D2C6BB3DE00AF9031 /* ContentView.swift */,
@@ -149,14 +149,14 @@
 			path = CalendarView;
 			sourceTree = "<group>";
 		};
-		0465BB1E2C6BBD2D00AF9031 /* CartView */ = {
+		0465BB1E2C6BBD2D00AF9031 /* GroceriesView */ = {
 			isa = PBXGroup;
 			children = (
-				04D191CA2C7B8DB800962B0D /* CartItemView.swift */,
-				0465BB212C6BBD5B00AF9031 /* CartView.swift */,
-				0465BB272C6BBDB900AF9031 /* CartViewModel.swift */,
+				04D191CA2C7B8DB800962B0D /* GroceriesItemView.swift */,
+				0465BB212C6BBD5B00AF9031 /* GroceriesView.swift */,
+				0465BB272C6BBDB900AF9031 /* GroceriesViewModel.swift */,
 			);
-			path = CartView;
+			path = GroceriesView;
 			sourceTree = "<group>";
 		};
 		0465BB292C6BC08400AF9031 /* Model */ = {
@@ -175,6 +175,14 @@
 				0465BB332C6BE50300AF9031 /* Groceries.json */,
 			);
 			path = Json;
+			sourceTree = "<group>";
+		};
+		04B5B8E82C7CF86000351154 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0465BB292C6BC08400AF9031 /* Model */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		04D191CC2C7B925900962B0D /* Components */ = {
@@ -270,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    perl \"./Agenda/Script/sort-xcode-project-files.pl\" \"Agenda.xcodeproj\"\nfi\n";
+			shellScript = "perl \"./Agenda/Script/sort-xcode-project-files.pl\" \"Agenda.xcodeproj\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -284,11 +292,11 @@
 				0465BB202C6BBD5400AF9031 /* CalendarView.swift in Sources */,
 				0465BB2B2C6BC09D00AF9031 /* CalendarViewModel.swift in Sources */,
 				0465BB2D2C6BC0AF00AF9031 /* CartItem.swift in Sources */,
-				04D191CB2C7B8DB800962B0D /* CartItemView.swift in Sources */,
-				0465BB222C6BBD5B00AF9031 /* CartView.swift in Sources */,
-				0465BB282C6BBDB900AF9031 /* CartViewModel.swift in Sources */,
 				04B150612C7B92DA00942A1C /* CheckmarkView.swift in Sources */,
 				0465BB0E2C6BB3DE00AF9031 /* ContentView.swift in Sources */,
+				04D191CB2C7B8DB800962B0D /* GroceriesItemView.swift in Sources */,
+				0465BB222C6BBD5B00AF9031 /* GroceriesView.swift in Sources */,
+				0465BB282C6BBDB900AF9031 /* GroceriesViewModel.swift in Sources */,
 				0465BB2F2C6BC0BF00AF9031 /* TaskItem.swift in Sources */,
 				0465BB242C6BBD6500AF9031 /* TaskView.swift in Sources */,
 				0465BB262C6BBD8F00AF9031 /* TaskViewModel.swift in Sources */,

@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class TaskViewModel: ObservableObject {
+final class TaskViewModel: ObservableObject {
     @Published var items: [TaskItem] = []
     
     init() {

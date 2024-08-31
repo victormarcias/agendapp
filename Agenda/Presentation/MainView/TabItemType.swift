@@ -32,35 +32,29 @@ enum TabItemType: Int, CaseIterable {
 private struct TabItemViewModifier: ViewModifier {
     var type: TabItemType
 
-    @State var selection: TabItemType = .groceries
-    @State private var isTextVisible: Bool = false
-
-    private var isSelected: Bool { selection == type }
+    @State var isSelected: Bool = false
     
     func body(content: Content) -> some View {
         content
             .tabItem {
-                VStack {
+                VStack(alignment: .center) {
                     Image(systemName: type.icon)
                         .font(.system(size: 24))
-                    
-                    if isTextVisible {
+                        .transition(
+                            .move(edge: .top)
+                        )
+
+                    if isSelected {
                         Text(type.title)
                             .font(.caption)
                             .transition(
                                 .move(edge: .bottom)
-                                .combined(with: .opacity)
                             )
                             .animation(.spring(
                                 response: 0.4,
                                 dampingFraction: 0.6,
                                 blendDuration: 0
-                            ), value: isTextVisible)
-                    }
-                }
-                .onChange(of: isSelected) { selected in
-                    withAnimation {
-                        isTextVisible = selected
+                            ), value: isSelected)
                     }
                 }
             }
@@ -69,17 +63,19 @@ private struct TabItemViewModifier: ViewModifier {
 }
 
 extension View {
-    func tabItemStyle(_ type: TabItemType, selection: TabItemType) -> some View {
-        modifier(TabItemViewModifier(type: type, selection: selection))
+    func tabItemStyle(_ type: TabItemType, isSelected: Bool) -> some View {
+        modifier(TabItemViewModifier(type: type, isSelected: isSelected))
     }
 }
 
 // MARK: - Preview
 #Preview {
-    TabView {
+    HStack {
         ForEach(TabItemType.allCases, id: \.self) { tab in
             Rectangle()
-                .tabItemStyle(tab, selection: .groceries)
+                .tabItemStyle(tab, isSelected: false)
         }
     }
+    .padding(.horizontal)
+    .frame(height: 80)
 }

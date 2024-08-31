@@ -15,12 +15,13 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selection) {
             CalendarView()
-                .tabItemStyle(.calendar, selection: selection)
+                .tabItemStyle(.calendar, isSelected: selection == .calendar)
             GroceriesView()
-                .tabItemStyle(.groceries, selection: selection)
+                .tabItemStyle(.groceries, isSelected: selection == .groceries)
             TaskView()
-                .tabItemStyle(.tasks, selection: selection)
+                .tabItemStyle(.tasks, isSelected: selection == .tasks)
         }
+        .id(UUID())
         .onAppear {
             if let selected = viewModel.selectedTab {
                 selection = selected

@@ -11,10 +11,8 @@ private struct ScaleButtonStyle: ButtonStyle {
     var scale: Double = 0.9
     
     func makeBody(configuration: Self.Configuration) -> some View {
-        withAnimation(.linear(duration: 0.5)) {
-            configuration.label
-                .scaleEffect(configuration.isPressed ? scale : 1)
-        }
+        configuration.label
+            .scaleEffect(configuration.isPressed ? scale : 1)
     }
 }
 

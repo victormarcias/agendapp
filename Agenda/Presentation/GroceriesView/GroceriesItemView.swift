@@ -25,22 +25,24 @@ struct GroceriesItemView: View {
                     .font(.title)
                     .fixedSize(horizontal: false, vertical: true)
                 Text(item.title)
-                    .font(.footnote)
+                    .font(.caption)
+                    .fontWeight(.semibold)
                     .fixedSize(horizontal: false, vertical: true)
                     .minimumScaleFactor(0.60)
                     .lineLimit(3)
+                    .multilineTextAlignment(.center)
                 Spacer()
             }
             .frame(maxWidth: 80, maxHeight: 60)
             .padding(EdgeInsets(top: 30, leading: 6, bottom: 12, trailing: 6))
-            .overlay(
-                CheckmarkView(size: 15, isChecked: item.isChecked)
-                    .padding(6), alignment: .topTrailing
-            )
             .overlay {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(.tertiary, lineWidth: 1)
             }
+            .overlay(
+                CheckmarkView(size: 12, isChecked: item.isChecked)
+                    .padding(6), alignment: .topTrailing
+            )
             .opacity(item.isChecked ? 0.50 : 1.00)
         })
         .onPressScale(0.95)

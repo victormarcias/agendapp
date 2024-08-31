@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041AB6B42C8372C600854659 /* MainTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AB6B32C8372C600854659 /* MainTabViewModel.swift */; };
+		041AB6B82C83768400854659 /* TabItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AB6B72C83768400854659 /* TabItemType.swift */; };
 		0465BB0C2C6BB3DE00AF9031 /* AgendaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */; };
-		0465BB0E2C6BB3DE00AF9031 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB0D2C6BB3DE00AF9031 /* ContentView.swift */; };
+		0465BB0E2C6BB3DE00AF9031 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB0D2C6BB3DE00AF9031 /* MainTabView.swift */; };
 		0465BB102C6BB3DF00AF9031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0465BB0F2C6BB3DF00AF9031 /* Assets.xcassets */; };
 		0465BB132C6BB3DF00AF9031 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0465BB122C6BB3DF00AF9031 /* Preview Assets.xcassets */; };
 		0465BB202C6BBD5400AF9031 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB1F2C6BBD5400AF9031 /* CalendarView.swift */; };
@@ -28,9 +30,11 @@
 
 /* Begin PBXFileReference section */
 		0409C5DD2C6BF48400EB5CE1 /* sort-xcode-project-files.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = "sort-xcode-project-files.pl"; sourceTree = "<group>"; };
+		041AB6B32C8372C600854659 /* MainTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewModel.swift; sourceTree = "<group>"; };
+		041AB6B72C83768400854659 /* TabItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemType.swift; sourceTree = "<group>"; };
 		0465BB082C6BB3DE00AF9031 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaApp.swift; sourceTree = "<group>"; };
-		0465BB0D2C6BB3DE00AF9031 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0465BB0D2C6BB3DE00AF9031 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		0465BB0F2C6BB3DF00AF9031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0465BB122C6BB3DF00AF9031 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0465BB1F2C6BBD5400AF9031 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -65,6 +69,23 @@
 				0409C5DD2C6BF48400EB5CE1 /* sort-xcode-project-files.pl */,
 			);
 			path = Script;
+			sourceTree = "<group>";
+		};
+		041AB6B22C8370AB00854659 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				0465BB0D2C6BB3DE00AF9031 /* MainTabView.swift */,
+				041AB6B32C8372C600854659 /* MainTabViewModel.swift */,
+				041AB6B72C83768400854659 /* TabItemType.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		041AB6B52C83763100854659 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		0465BAFF2C6BB3DE00AF9031 = {
@@ -118,9 +139,10 @@
 				0465BB1D2C6BBD2700AF9031 /* CalendarView */,
 				04D191CC2C7B925900962B0D /* Components */,
 				0465BB1E2C6BBD2D00AF9031 /* GroceriesView */,
+				041AB6B22C8370AB00854659 /* MainView */,
+				041AB6B52C83763100854659 /* Style */,
 				0465BB1C2C6BBD2000AF9031 /* TaskView */,
 				0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */,
-				0465BB0D2C6BB3DE00AF9031 /* ContentView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -281,7 +303,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#perl \"./Agenda/Script/sort-xcode-project-files.pl\" \"Agenda.xcodeproj\"\n";
+			shellScript = "perl \"./Agenda/Script/sort-xcode-project-files.pl\" \"Agenda.xcodeproj\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -295,12 +317,14 @@
 				0465BB202C6BBD5400AF9031 /* CalendarView.swift in Sources */,
 				0465BB2B2C6BC09D00AF9031 /* CalendarViewModel.swift in Sources */,
 				04B150612C7B92DA00942A1C /* CheckmarkView.swift in Sources */,
-				0465BB0E2C6BB3DE00AF9031 /* ContentView.swift in Sources */,
 				04D191CB2C7B8DB800962B0D /* GroceriesItemView.swift in Sources */,
 				0465BB222C6BBD5B00AF9031 /* GroceriesView.swift in Sources */,
 				0465BB282C6BBDB900AF9031 /* GroceriesViewModel.swift in Sources */,
 				0465BB2D2C6BC0AF00AF9031 /* GroceryItem.swift in Sources */,
+				0465BB0E2C6BB3DE00AF9031 /* MainTabView.swift in Sources */,
+				041AB6B42C8372C600854659 /* MainTabViewModel.swift in Sources */,
 				04EFD88B2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift in Sources */,
+				041AB6B82C83768400854659 /* TabItemType.swift in Sources */,
 				0465BB2F2C6BC0BF00AF9031 /* TaskItem.swift in Sources */,
 				0465BB242C6BBD6500AF9031 /* TaskView.swift in Sources */,
 				0465BB262C6BBD8F00AF9031 /* TaskViewModel.swift in Sources */,

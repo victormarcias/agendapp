@@ -23,28 +23,25 @@ struct GroceriesListItemView: View {
             HStack(alignment: .center, spacing: 10) {
                 Text(item.emoji)
                     .font(.title)
-                    .fixedSize(horizontal: true, vertical: true)
+                    .fixedSize(horizontal: false, vertical: true)
                 Text(item.title)
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .fixedSize(horizontal: true, vertical: false)
-                    .minimumScaleFactor(0.70)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: false)
+                    .lineLimit(nil)
+                    .multilineTextAlignment(.leading)
                 Spacer()
+                CheckmarkView(size: 20, isChecked: item.isChecked)
+                    .padding(.trailing, 4)
             }
             .contentShape(Rectangle())
             .frame(height: 55)
             .frame(maxWidth: 340)
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 16)
             .overlay {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(.tertiary, lineWidth: 1)
             }
-            .overlay(
-                CheckmarkView(size: 20, isChecked: item.isChecked)
-                    .padding(.trailing, 20), alignment: .trailing
-            )
             .opacity(item.isChecked ? 0.50 : 1.00)
         })
         .onPressScale(0.95)
@@ -55,13 +52,19 @@ struct GroceriesListItemView: View {
 #Preview {
     VStack {
         GroceriesListItemView(item: .init(
-            title: "Detergente para vidrios",
-            emoji: "🪟",
+            title: "Manzana",
+            emoji: "🍎",
             isChecked: false)
         )
         GroceriesListItemView(item: .init(
-            title: "Desinfectante",
-            emoji: "🧴")
+            title: "Detergente para vidrios que tambien limpia pisos",
+            emoji: "🧴",
+            isChecked: true)
+        )
+        GroceriesListItemView(item: .init(
+            title: "Detergente para vidrios que tambien limpia pisos",
+            emoji: "🧼",
+            isChecked: false)
         )
     }
     .padding()

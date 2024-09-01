@@ -35,6 +35,7 @@ struct Storage {
     func save<T: Encodable>(_ item: T, for key: StorageKey) {
         if let encoded = try? JSONEncoder().encode(item) {
             UserDefaults.standard.set(encoded, forKey: key.rawValue)
+            UserDefaults.standard.synchronize()
         } else {
             print("Failed to save \(item) with key: \(key.rawValue)")
         }
@@ -64,5 +65,6 @@ extension Storage {
     func saveEnumValue<T: RawRepresentable>(_ value: T, for key: StorageKey) where T.RawValue: LosslessStringConvertible {
         // Guardar el valor crudo del `enum` en `UserDefaults`
         UserDefaults.standard.set(value.rawValue, forKey: key.rawValue)
+        UserDefaults.standard.synchronize()
     }
 }

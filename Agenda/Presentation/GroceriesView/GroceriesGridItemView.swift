@@ -33,6 +33,7 @@ struct GroceriesGridItemView: View {
                     .multilineTextAlignment(.center)
                 Spacer()
             }
+            .contentShape(Rectangle())
             .frame(maxWidth: 80, maxHeight: 60)
             .padding(EdgeInsets(top: 30, leading: 6, bottom: 12, trailing: 6))
             .overlay {
@@ -52,13 +53,16 @@ struct GroceriesGridItemView: View {
 // MARK: - Previews
 #Preview {
     HStack(spacing: 20) {
-        GroceriesGridItemView(item: .init(category: 0,
-                                      title: "Detergente para vidrios",
-                                      emoji: "🪟"))
-        GroceriesGridItemView(item: .init(category: 1,
-                                      title: "Desinfectante",
-                                      emoji: "🧴",
-                                      isChecked: true))
+        GroceriesGridItemView(item: .init(
+            title: "Detergente para vidrios",
+            emoji: "🪟",
+            isChecked: false)
+        )
+        GroceriesGridItemView(item: .init(
+            title: "Desinfectante",
+            emoji: "🧴",
+            isChecked: true)
+        )
     }
     .previewDevice(.none)
     .previewLayout(.sizeThatFits)

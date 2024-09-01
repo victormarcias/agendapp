@@ -24,18 +24,18 @@ struct GroceriesListItemView: View {
                 Text(item.emoji)
                     .font(.title)
                     .fixedSize(horizontal: true, vertical: true)
-                    .frame(height: 60)
                 Text(item.title)
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .minimumScaleFactor(0.60)
-                    .lineLimit(3)
+                    .fixedSize(horizontal: true, vertical: false)
+                    .minimumScaleFactor(0.70)
+                    .lineLimit(2)
                     .multilineTextAlignment(.center)
                 Spacer()
             }
             .contentShape(Rectangle())
-            .frame(height: 50)
+            .frame(height: 55)
+            .frame(maxWidth: 340)
             .padding(.horizontal, 20)
             .overlay {
                 RoundedRectangle(cornerRadius: 10)
@@ -54,13 +54,15 @@ struct GroceriesListItemView: View {
 // MARK: - Previews
 #Preview {
     VStack {
-        GroceriesListItemView(item: .init(category: 0,
-                                          title: "Detergente para vidrios",
-                                          emoji: "🪟"))
-        GroceriesListItemView(item: .init(category: 1,
-                                      title: "Desinfectante",
-                                      emoji: "🧴",
-                                      isChecked: true))
+        GroceriesListItemView(item: .init(
+            title: "Detergente para vidrios",
+            emoji: "🪟",
+            isChecked: false)
+        )
+        GroceriesListItemView(item: .init(
+            title: "Desinfectante",
+            emoji: "🧴")
+        )
     }
     .padding()
 }

@@ -23,10 +23,10 @@ struct GroceryItem: Identifiable, Codable {
     }
     
     init(id: UUID = UUID(),
-         category: Int,
+         category: Int = 0,
          title: String,
          emoji: String,
-         isChecked: Bool = false) {
+         isChecked: Bool = true) {
         self.id = id
         self.category = category
         self.title = title
@@ -41,7 +41,7 @@ struct GroceryItem: Identifiable, Codable {
         self.category = try container.decode(Int.self, forKey: .category)
         self.title = try container.decode(String.self, forKey: .title)
         self.emoji = try container.decode(String.self, forKey: .emoji)
-        self.isChecked = try container.decodeIfPresent(Bool.self, forKey: .isChecked) ?? false
+        self.isChecked = try container.decodeIfPresent(Bool.self, forKey: .isChecked) ?? true
     }
     
     mutating func toggle() {

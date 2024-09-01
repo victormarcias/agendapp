@@ -51,19 +51,20 @@ struct GroceriesGridItemView: View {
 }
 
 // MARK: - Previews
-#Preview {
-    HStack(spacing: 20) {
-        GroceriesGridItemView(item: .init(
-            title: "Detergente para vidrios",
-            emoji: "🪟",
-            isChecked: false)
-        )
-        GroceriesGridItemView(item: .init(
-            title: "Desinfectante",
-            emoji: "🧴",
-            isChecked: true)
-        )
+struct GroceriesGridItemView_Preview: PreviewProvider {
+    static var previews: some View {
+        HStack(spacing: 20) {
+            GroceriesGridItemView(item: .init(
+                title: "Detergente para vidrios",
+                emoji: "🪟",
+                isChecked: false)
+            )
+            GroceriesGridItemView(item: .init(
+                title: "Desinfectante",
+                emoji: "🧴",
+                isChecked: true)
+            )
+        }
+        .devicelessPreview()
     }
-    .previewDevice(.none)
-    .previewLayout(.sizeThatFits)
 }

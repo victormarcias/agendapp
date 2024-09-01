@@ -29,7 +29,7 @@ enum TabItemType: Int, CaseIterable {
     }
 }
 
-// MARK: - Modifier
+// MARK: - ViewModifier
 private struct TabItemViewModifier: ViewModifier {
     var type: TabItemType
 

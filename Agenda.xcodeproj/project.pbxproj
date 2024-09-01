@@ -30,6 +30,7 @@
 		04B892FC2C84F14D00BAB78E /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B892FB2C84F14D00BAB78E /* Storage.swift */; };
 		04B892FE2C850CE800BAB78E /* BounceEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B892FD2C850CE800BAB78E /* BounceEffect.swift */; };
 		04B893002C850DF600BAB78E /* JumpingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B892FF2C850DF600BAB78E /* JumpingEffect.swift */; };
+		04E3F3362C851AEF003D6682 /* DevicelessPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3F3352C851AEF003D6682 /* DevicelessPreview.swift */; };
 		04EFD88B2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFD88A2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		04B892FB2C84F14D00BAB78E /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		04B892FD2C850CE800BAB78E /* BounceEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceEffect.swift; sourceTree = "<group>"; };
 		04B892FF2C850DF600BAB78E /* JumpingEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpingEffect.swift; sourceTree = "<group>"; };
+		04E3F3352C851AEF003D6682 /* DevicelessPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicelessPreview.swift; sourceTree = "<group>"; };
 		04EFD88A2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,6 +245,7 @@
 			children = (
 				04B892FD2C850CE800BAB78E /* BounceEffect.swift */,
 				04B150602C7B92DA00942A1C /* CheckmarkView.swift */,
+				04E3F3352C851AEF003D6682 /* DevicelessPreview.swift */,
 				04B892FF2C850DF600BAB78E /* JumpingEffect.swift */,
 				04EFD88A2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift */,
 			);
@@ -349,6 +352,7 @@
 				0465BB202C6BBD5400AF9031 /* CalendarView.swift in Sources */,
 				0465BB2B2C6BC09D00AF9031 /* CalendarViewModel.swift in Sources */,
 				04B150612C7B92DA00942A1C /* CheckmarkView.swift in Sources */,
+				04E3F3362C851AEF003D6682 /* DevicelessPreview.swift in Sources */,
 				04B892F22C84ED2500BAB78E /* GroceriesGridItemView.swift in Sources */,
 				04B892F62C84ED4600BAB78E /* GroceriesListItemView.swift in Sources */,
 				0465BB222C6BBD5B00AF9031 /* GroceriesView.swift in Sources */,

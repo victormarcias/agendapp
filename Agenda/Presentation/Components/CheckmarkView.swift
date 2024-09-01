@@ -25,12 +25,14 @@ struct CheckmarkView: View {
 }
 
 // MARK: - Previews
-#Preview {
-    HStack(spacing: 20) {
-        CheckmarkView()
-        CheckmarkView(isChecked: true)
-        CheckmarkView(size: 40, border: 4)
-        CheckmarkView(size: 40, border: 4, isChecked: true)
+struct CheckmarkView_Preview: PreviewProvider {
+    static var previews: some View {
+        HStack(spacing: 20) {
+            CheckmarkView()
+            CheckmarkView(isChecked: true)
+            CheckmarkView(size: 40, border: 4)
+            CheckmarkView(size: 40, border: 4, isChecked: true)
+        }
+        .devicelessPreview()
     }
-    .previewDevice(.none)
 }

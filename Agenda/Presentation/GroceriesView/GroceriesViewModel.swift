@@ -8,9 +8,13 @@
 import Combine
 import Foundation
 
+enum GroceriesLayoutType: Int { case grid, list }
+
 final class GroceriesViewModel: ObservableObject {
     @Published var items: [GroceryItem] = []
-    
+    @Published var layoutType: GroceriesLayoutType = .list
+    private var storage = Storage()
+
     var sortedItems: [GroceryItem] {
         items
             .sorted { $0.title < $1.title }
@@ -31,24 +35,16 @@ final class GroceriesViewModel: ObservableObject {
     
     private func loadStoredItems() {
         // Cargar los items desde UserDefaults
-        if let data = UserDefaults.standard.data(forKey: "cartItems"),
-           let decoded = try? JSONDecoder().decode([GroceryItem].self, from: data) {
-            self.items = decoded
-            return
-        }
+        items = storage.object(for: .groceriesItems) ?? []
+        layoutType = storage.enumValue(for: .groceriesLayout) ?? .list
         
         // Sino el Template
-        // Uso de la función para cargar el archivo JSON
-        if let items = loadTemplateItems(from: "Groceries") {
-            self.items = items
-        }
+        guard items.isEmpty else { return }
+        items = loadTemplateItems(from: "Groceries") ?? []
     }
     
     private func saveItems() {
-        // Guardar los items en UserDefaults
-        if let encoded = try? JSONEncoder().encode(items) {
-            UserDefaults.standard.set(encoded, forKey: "cartItems")
-        }
+        storage.save(items, for: .groceriesItems)
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  GroceriesItemView.swift
+//  GroceriesGridItemView.swift
 //  Agenda
 //
 //  Created by Victor Marcias on 25/08/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GroceriesItemView: View {
+struct GroceriesGridItemView: View {
     let item: GroceryItem
     var action: () -> Void
 
@@ -52,10 +52,10 @@ struct GroceriesItemView: View {
 // MARK: - Previews
 #Preview {
     HStack(spacing: 20) {
-        GroceriesItemView(item: .init(category: 0,
+        GroceriesGridItemView(item: .init(category: 0,
                                       title: "Detergente para vidrios",
                                       emoji: "🪟"))
-        GroceriesItemView(item: .init(category: 1,
+        GroceriesGridItemView(item: .init(category: 1,
                                       title: "Desinfectante",
                                       emoji: "🧴",
                                       isChecked: true))

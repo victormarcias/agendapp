@@ -10,6 +10,7 @@ import Foundation
 
 final class CalendarViewModel: ObservableObject {
     @Published var items: [CalendarItem] = []
+    private var storage = Storage()
     
     init() {
         loadItems()
@@ -17,16 +18,11 @@ final class CalendarViewModel: ObservableObject {
     
     private func loadItems() {
         // Cargar los items desde UserDefaults
-        if let data = UserDefaults.standard.data(forKey: "calendarItems"),
-           let decoded = try? JSONDecoder().decode([CalendarItem].self, from: data) {
-            self.items = decoded
-        }
+        items = storage.object(for: .calendarItems) ?? []
     }
     
     private func saveItems() {
         // Guardar los items en UserDefaults
-        if let encoded = try? JSONEncoder().encode(items) {
-            UserDefaults.standard.set(encoded, forKey: "calendarItems")
-        }
+        storage.save(items, for: .calendarItems)
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 final class TaskViewModel: ObservableObject {
     @Published var items: [TaskItem] = []
+    private var storage = Storage()
     
     init() {
         loadItems()
@@ -17,16 +18,11 @@ final class TaskViewModel: ObservableObject {
     
     private func loadItems() {
         // Cargar los items desde UserDefaults
-        if let data = UserDefaults.standard.data(forKey: "taskItems"),
-           let decoded = try? JSONDecoder().decode([TaskItem].self, from: data) {
-            self.items = decoded
-        }
+        items = storage.object(for: .taskItems) ?? []
     }
     
     private func saveItems() {
         // Guardar los items en UserDefaults
-        if let encoded = try? JSONEncoder().encode(items) {
-            UserDefaults.standard.set(encoded, forKey: "taskItems")
-        }
+        storage.save(items, for: .taskItems)
     }
 }

@@ -23,21 +23,39 @@ struct GroceriesView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columnsGuide, spacing: 10) {
-                ForEach(list.keys.sorted(), id: \.self) { key in
-                    Section(header: Text(key).font(.headline)) {
-                        if let items = list[key] {
-                            ForEach(items) { item in
-                                GroceriesItemView(item: item) {
-                                    viewModel.selectItem(item)
+            if viewModel.layoutType == .grid {
+                LazyVGrid(columns: columnsGuide, spacing: 10) {
+                    ForEach(list.keys.sorted(), id: \.self) { key in
+                        Section(header: Text(key).font(.headline)) {
+                            if let items = list[key] {
+                                ForEach(items) { item in
+                                    GroceriesGridItemView(item: item) {
+                                        viewModel.selectItem(item)
+                                    }
                                 }
                             }
                         }
                     }
                 }
+                .id(UUID())
+                .padding(.vertical, 20)
+            } else {
+                LazyVGrid(columns: [GridItem()], spacing: 10) {
+                    ForEach(list.keys.sorted(), id: \.self) { key in
+                        Section(header: Text(key).font(.headline)) {
+                            if let items = list[key] {
+                                ForEach(items) { item in
+                                    GroceriesListItemView(item: item) {
+                                        viewModel.selectItem(item)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .id(UUID())
+                .padding(20)
             }
-            .id(UUID())
-            .padding(.vertical, 20)
         }
     }
 }

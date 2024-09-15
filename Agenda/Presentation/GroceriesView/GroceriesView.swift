@@ -9,55 +9,45 @@ import SwiftUI
 
 struct GroceriesView: View {
     @ObservedObject var viewModel = GroceriesViewModel()
+    @State var isExpanded: [Bool] = Array(repeating: true, count: GroceryCategory.allCases.count)
     
-    private var list: [String: [GroceryItem]] {
+    private var groups: [GroceryCategory: [GroceryItem]] {
         viewModel.sortedItems
     }
     
-    private var columnsGuide = [
-        GridItem(.flexible(minimum: 30, maximum: 80)),
-        GridItem(.flexible(minimum: 30, maximum: 80)),
-        GridItem(.flexible(minimum: 30, maximum: 80)),
-        GridItem(.flexible(minimum: 30, maximum: 80))
-    ]
-    
     var body: some View {
         ScrollView {
-            if viewModel.layoutType == .grid {
-                LazyVGrid(columns: columnsGuide, spacing: 10) {
-                    ForEach(list.keys.sorted(), id: \.self) { key in
-                        Section(header: Text(key).font(.headline)) {
-                            if let items = list[key] {
-                                ForEach(items) { item in
-                                    GroceriesGridItemView(item: item) {
-                                        withAnimation {
-                                            viewModel.selectItem(item)
-                                        }
-                                    }
+            LazyVGrid(columns: [GridItem()], spacing: 10) {
+                ForEach(Array(groups.keys)
+                    .sorted(by: { $0.rawValue < $1.rawValue }), id:\.rawValue) { key in
+                        
+                        Section {
+                            GroceriesHeaderView(
+                                title: key.title,
+                                numberOfItems: groups[key]?.count ?? 0,
+                                isExpanded: shouldShowCategory(key)
+                            ).onTapGesture {
+                                withAnimation {
+                                    isExpanded[key.rawValue].toggle()
+                                }
+                            }
+                        
+                        if let items = groups[key], shouldShowCategory(key) {
+                            ForEach(items) { item in
+                                GroceriesListItemView(item: item) {
+                                    viewModel.selectItem(item)
                                 }
                             }
                         }
                     }
                 }
-                .id(UUID())
-                .padding(.vertical, 20)
-            } else {
-                LazyVGrid(columns: [GridItem()], spacing: 10) {
-                    ForEach(list.keys.sorted(), id: \.self) { key in
-                        Section(header: Text(key).font(.headline)) {
-                            if let items = list[key] {
-                                ForEach(items) { item in
-                                    GroceriesListItemView(item: item) {
-                                        viewModel.selectItem(item)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .id(UUID())
-                .padding(20)
             }
+            .id(UUID())
+            .padding(20)
         }
+    }
+    
+    private func shouldShowCategory(_ category: GroceryCategory) -> Bool {
+        isExpanded[category.rawValue]
     }
 }

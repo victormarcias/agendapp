@@ -42,7 +42,7 @@ struct GroceriesListItemView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(.tertiary, lineWidth: 1)
             }
-            .opacity(item.isSelected ? 0.50 : 1.00)
+            .opacity(item.isSelected ? 0.70 : 1.00)
         })
         .onPressScale(0.95)
     }

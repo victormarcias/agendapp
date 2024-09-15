@@ -1,5 +1,5 @@
 //
-//  GroceriesView.swift
+//  ShoppingListView.swift
 //  Agenda
 //
 //  Created by Victor Marcias on 13/08/2024.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct GroceriesView: View {
-    @ObservedObject var viewModel = GroceriesViewModel()
-    @State var isExpanded: [Bool] = Array(repeating: true, count: GroceryCategory.allCases.count)
+struct ShoppingListView: View {
+    @ObservedObject var viewModel = ShoppingListViewModel()
+    @State var isExpanded: [Bool] = Array(repeating: true, count: ShoppingCategory.allCases.count)
     
-    private var groups: [GroceryCategory: [GroceryItem]] {
+    private var groups: [ShoppingCategory: [ShoppingItem]] {
         viewModel.sortedItems
     }
     
@@ -22,7 +22,7 @@ struct GroceriesView: View {
                     .sorted(by: { $0.rawValue < $1.rawValue }), id:\.rawValue) { key in
                         
                         Section {
-                            GroceriesHeaderView(
+                            ShoppingListHeaderView(
                                 title: key.title,
                                 numberOfItems: groups[key]?.count ?? 0,
                                 isExpanded: shouldShowCategory(key)
@@ -34,7 +34,7 @@ struct GroceriesView: View {
                         
                         if let items = groups[key], shouldShowCategory(key) {
                             ForEach(items) { item in
-                                GroceriesListItemView(item: item) {
+                                ShoppingListItemView(item: item) {
                                     viewModel.selectItem(item)
                                 }
                             }
@@ -47,7 +47,7 @@ struct GroceriesView: View {
         }
     }
     
-    private func shouldShowCategory(_ category: GroceryCategory) -> Bool {
+    private func shouldShowCategory(_ category: ShoppingCategory) -> Bool {
         isExpanded[category.rawValue]
     }
 }

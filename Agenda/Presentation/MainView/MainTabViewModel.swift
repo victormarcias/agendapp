@@ -16,7 +16,7 @@ final class MainTabViewModel: ObservableObject {
     
     private func loadPreferences() {
         let tab = UserDefaults.standard.integer(forKey: "selectedTab")
-        selectedTab = .init(rawValue: tab) ?? .groceries
+        selectedTab = .init(rawValue: tab) ?? .shopping
     }
     
     func savePreferences() {

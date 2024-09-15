@@ -1,5 +1,5 @@
 //
-//  GroceriesListItemView.swift
+//  ShoppingListItemView.swift
 //  Agenda
 //
 //  Created by Victor Marcias on 25/08/2024.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct GroceriesListItemView: View {
-    let item: GroceryItem
+struct ShoppingListItemView: View {
+    let item: ShoppingItem
     var action: () -> Void
     
     typealias TapAction = () -> Void
     
-    init(item: GroceryItem, _ action: TapAction? = nil) {
+    init(item: ShoppingItem, _ action: TapAction? = nil) {
         self.item = item
         self.action = action ?? {}
     }
@@ -51,17 +51,17 @@ struct GroceriesListItemView: View {
 // MARK: - Previews
 #Preview {
     VStack {
-        GroceriesListItemView(item: .init(
+        ShoppingListItemView(item: .init(
             title: "Manzana",
             emoji: "🍎",
             isChecked: false)
         )
-        GroceriesListItemView(item: .init(
+        ShoppingListItemView(item: .init(
             title: "Detergente para vidrios que tambien limpia pisos",
             emoji: "🧺",
             isChecked: true)
         )
-        GroceriesListItemView(item: .init(
+        ShoppingListItemView(item: .init(
             title: "Detergente para vidrios que tambien limpia pisos",
             emoji: "🧼",
             isChecked: false)

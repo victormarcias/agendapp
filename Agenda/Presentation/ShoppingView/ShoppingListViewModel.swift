@@ -1,5 +1,5 @@
 //
-//  GroceriesViewModel.swift
+//  ShoppingListViewModel.swift
 //  Agenda
 //
 //  Created by Victor Marcias on 13/08/2024.
@@ -8,14 +8,11 @@
 import Combine
 import Foundation
 
-enum GroceriesLayoutType: Int { case grid, list }
-
-final class GroceriesViewModel: ObservableObject {
-    @Published var items: [GroceryItem] = []
-    @Published var layoutType: GroceriesLayoutType = .list
+final class ShoppingListViewModel: ObservableObject {
+    @Published var items: [ShoppingItem] = []
     private var storage = Storage()
 
-    var sortedItems: [GroceryCategory: [GroceryItem]] {
+    var sortedItems: [ShoppingCategory: [ShoppingItem]] {
         items.sorted(by: .selectionUncategorized)
     }
     
@@ -23,7 +20,7 @@ final class GroceriesViewModel: ObservableObject {
         loadStoredItems()
     }
     
-    func selectItem(_ item: GroceryItem) {
+    func selectItem(_ item: ShoppingItem) {
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             var mutableItem = item
             mutableItem.toggle()
@@ -34,23 +31,22 @@ final class GroceriesViewModel: ObservableObject {
     
     private func loadStoredItems() {
         // Cargar los items desde UserDefaults
-        items = storage.object(for: .groceriesItems) ?? []
-        layoutType = storage.enumValue(for: .groceriesLayout) ?? .list
+        items = storage.object(for: .shoppingItems) ?? []
         
         // Sino el Template
         guard items.isEmpty else { return }
-        items = loadTemplateItems(from: "Groceries") ?? []
+        items = loadTemplateItems(from: "CartTemplate") ?? []
     }
     
     private func saveItems() {
-        storage.save(items, for: .groceriesItems)
+        storage.save(items, for: .shoppingItems)
     }
 }
 
 // MARK: - Template
-extension GroceriesViewModel {
+extension ShoppingListViewModel {
     
-    func loadTemplateItems(from fileName: String) -> [GroceryItem]? {
+    func loadTemplateItems(from fileName: String) -> [ShoppingItem]? {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
             print("Archivo no encontrado")
             return nil
@@ -58,7 +54,7 @@ extension GroceriesViewModel {
         
         do {
             let data = try Data(contentsOf: url)
-            let categories = try JSONDecoder().decode([String: [GroceryItem]].self, from: data)
+            let categories = try JSONDecoder().decode([String: [ShoppingItem]].self, from: data)
             return categories["Template"]
         } catch {
             print("Error al decodificar JSON: \(error)")

@@ -1,5 +1,5 @@
 //
-//  GroceriesListItemSortType.swift
+//  ShoppingListSortType.swift
 //  Agenda
 //
 //  Created by Victor Marcias on 15/09/2024.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-enum GroceriesSortType {
+enum ShoppingListSortType {
     case selectionUncategorized
     case selectionGrouped
 }
 
-extension Array where Element == GroceryItem {
+extension Array where Element == ShoppingItem {
     
-    func sorted(by sortType: GroceriesSortType) -> [GroceryCategory: [GroceryItem]] {
+    func sorted(by sortType: ShoppingListSortType) -> [ShoppingCategory: [ShoppingItem]] {
         switch sortType {
         case .selectionUncategorized:
             return sortedBySelectionAndTitleUncategorized()
@@ -23,7 +23,7 @@ extension Array where Element == GroceryItem {
         }
     }
     
-    private func sortedBySelectionAndTitleUncategorized() -> [GroceryCategory: [GroceryItem]] {
+    private func sortedBySelectionAndTitleUncategorized() -> [ShoppingCategory: [ShoppingItem]] {
         let sorted = self.sorted { $0.title < $1.title }
         return [
             .pending: sorted.filter { !$0.isSelected },

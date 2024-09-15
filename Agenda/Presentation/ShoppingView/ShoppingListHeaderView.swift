@@ -1,5 +1,5 @@
 //
-//  GroceriesHeaderView.swift
+//  ShoppingListHeaderView.swift
 //  Agenda
 //
 //  Created by Victor Marcias on 15/09/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GroceriesHeaderView: View {
+struct ShoppingListHeaderView: View {
     var title: String
     var numberOfItems: Int
     var isExpanded: Bool
@@ -47,12 +47,12 @@ struct GroceriesHeaderView: View {
 }
 
 // MARK: - Previews
-struct GroceriesHeaderView_Preview: PreviewProvider {
+struct ShoppingListHeaderView_Preview: PreviewProvider {
     static var previews: some View {
         VStack {
-            GroceriesHeaderView(title: "Frutas y Verduras", 
-                                numberOfItems: 7,
-                                isExpanded: true)
+            ShoppingListHeaderView(title: "Frutas y Verduras",
+                                   numberOfItems: 7,
+                                   isExpanded: true)
         }
         .padding()
         .devicelessPreview()

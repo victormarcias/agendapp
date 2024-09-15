@@ -10,8 +10,7 @@ import Foundation
 // MARK: - Storage Keys
 enum StorageKey: String, CaseIterable {
     case calendarItems = "calendar.items"
-    case groceriesItems = "groceries.cartItems"
-    case groceriesLayout = "groceries.layoutType"
+    case shoppingItems = "shopping.items"
     case taskItems = "tasks.cartItems"
 
     var value: String { rawValue }

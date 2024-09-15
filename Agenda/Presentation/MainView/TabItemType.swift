@@ -10,12 +10,12 @@ import SwiftUI
 
 // MARK: - Type
 enum TabItemType: Int, CaseIterable {
-    case calendar, groceries, tasks
+    case calendar, shopping, tasks
     
     var title: String {
         switch self {
         case .calendar: return "Calendario"
-        case .groceries: return "Compras"
+        case .shopping: return "Compras"
         case .tasks: return "Tareas"
         }
     }
@@ -23,7 +23,7 @@ enum TabItemType: Int, CaseIterable {
     var icon: String {
         switch self {
         case .calendar: return "calendar"
-        case .groceries: return "cart"
+        case .shopping: return "cart"
         case .tasks: return "checklist"
         }
     }

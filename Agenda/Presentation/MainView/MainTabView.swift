@@ -16,8 +16,8 @@ struct MainTabView: View {
         TabView(selection: $selection) {
             CalendarView()
                 .tabItemStyle(.calendar, isSelected: selection == .calendar)
-            GroceriesView()
-                .tabItemStyle(.groceries, isSelected: selection == .groceries)
+            ShoppingListView()
+                .tabItemStyle(.shopping, isSelected: selection == .shopping)
             TaskView()
                 .tabItemStyle(.tasks, isSelected: selection == .tasks)
         }

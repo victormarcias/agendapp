@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GroceryCategory: Int, CaseIterable {
+enum ShoppingCategory: Int, CaseIterable {
     case pending = 0    // marcados para comprar
     case food = 1
     case fruits = 2

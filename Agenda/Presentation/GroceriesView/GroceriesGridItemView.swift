@@ -41,10 +41,10 @@ struct GroceriesGridItemView: View {
                     .stroke(.tertiary, lineWidth: 1)
             }
             .overlay(
-                CheckmarkView(size: 12, isChecked: item.isChecked)
+                CheckmarkView(size: 12, isChecked: item.isSelected)
                     .padding(6), alignment: .topTrailing
             )
-            .opacity(item.isChecked ? 0.50 : 1.00)
+            .opacity(item.isSelected ? 0.50 : 1.00)
         })
         .onPressScale(0.95)
     }

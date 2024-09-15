@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		041AB6B42C8372C600854659 /* MainTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AB6B32C8372C600854659 /* MainTabViewModel.swift */; };
 		041AB6B82C83768400854659 /* TabItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AB6B72C83768400854659 /* TabItemType.swift */; };
+		041D57E62C97132F004B5527 /* GroceriesListItemSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D57E52C97132F004B5527 /* GroceriesListItemSortType.swift */; };
 		0465BB0C2C6BB3DE00AF9031 /* AgendaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */; };
 		0465BB0E2C6BB3DE00AF9031 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB0D2C6BB3DE00AF9031 /* MainTabView.swift */; };
 		0465BB102C6BB3DF00AF9031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0465BB0F2C6BB3DF00AF9031 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		0409C5DD2C6BF48400EB5CE1 /* sort-xcode-project-files.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = "sort-xcode-project-files.pl"; sourceTree = "<group>"; };
 		041AB6B32C8372C600854659 /* MainTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewModel.swift; sourceTree = "<group>"; };
 		041AB6B72C83768400854659 /* TabItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemType.swift; sourceTree = "<group>"; };
+		041D57E52C97132F004B5527 /* GroceriesListItemSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesListItemSortType.swift; sourceTree = "<group>"; };
 		0465BB082C6BB3DE00AF9031 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaApp.swift; sourceTree = "<group>"; };
 		0465BB0D2C6BB3DE00AF9031 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				04B892F12C84ED2500BAB78E /* GroceriesGridItemView.swift */,
+				041D57E52C97132F004B5527 /* GroceriesListItemSortType.swift */,
 				04B892F52C84ED4600BAB78E /* GroceriesListItemView.swift */,
 				0465BB212C6BBD5B00AF9031 /* GroceriesView.swift */,
 				0465BB272C6BBDB900AF9031 /* GroceriesViewModel.swift */,
@@ -354,6 +357,7 @@
 				04B150612C7B92DA00942A1C /* CheckmarkView.swift in Sources */,
 				04E3F3362C851AEF003D6682 /* DevicelessPreview.swift in Sources */,
 				04B892F22C84ED2500BAB78E /* GroceriesGridItemView.swift in Sources */,
+				041D57E62C97132F004B5527 /* GroceriesListItemSortType.swift in Sources */,
 				04B892F62C84ED4600BAB78E /* GroceriesListItemView.swift in Sources */,
 				0465BB222C6BBD5B00AF9031 /* GroceriesView.swift in Sources */,
 				0465BB282C6BBDB900AF9031 /* GroceriesViewModel.swift in Sources */,

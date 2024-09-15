@@ -15,9 +15,8 @@ final class GroceriesViewModel: ObservableObject {
     @Published var layoutType: GroceriesLayoutType = .list
     private var storage = Storage()
 
-    var sortedItems: [GroceryItem] {
-        items
-            .sorted { $0.title < $1.title }
+    var sortedItems: [String: [GroceryItem]] {
+        items.sorted(by: .selectionUncategorized)
     }
     
     init() {

@@ -31,7 +31,7 @@ struct GroceriesListItemView: View {
                     .lineLimit(nil)
                     .multilineTextAlignment(.leading)
                 Spacer()
-                CheckmarkView(size: 20, isChecked: item.isChecked)
+                CheckmarkView(size: 20, isChecked: item.isSelected)
                     .padding(.trailing, 4)
             }
             .contentShape(Rectangle())
@@ -42,7 +42,7 @@ struct GroceriesListItemView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(.tertiary, lineWidth: 1)
             }
-            .opacity(item.isChecked ? 0.50 : 1.00)
+            .opacity(item.isSelected ? 0.50 : 1.00)
         })
         .onPressScale(0.95)
     }
@@ -58,7 +58,7 @@ struct GroceriesListItemView: View {
         )
         GroceriesListItemView(item: .init(
             title: "Detergente para vidrios que tambien limpia pisos",
-            emoji: "🧴",
+            emoji: "🧺",
             isChecked: true)
         )
         GroceriesListItemView(item: .init(

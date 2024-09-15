@@ -12,14 +12,14 @@ struct GroceryItem: Identifiable, Codable {
     let category: Int
     let title: String
     let emoji: String
-    var isChecked: Bool
+    var isSelected: Bool
     
     enum CodingKeys: String, CodingKey {
         case id
         case category = "cat"
         case title
         case emoji
-        case isChecked
+        case isSelected
     }
     
     init(id: UUID = UUID(),
@@ -31,7 +31,7 @@ struct GroceryItem: Identifiable, Codable {
         self.category = category
         self.title = title
         self.emoji = emoji
-        self.isChecked = isChecked
+        self.isSelected = isChecked
     }
     
     // Este init permite la creación manual sin pasar el id para compatibilidad con JSON
@@ -41,10 +41,10 @@ struct GroceryItem: Identifiable, Codable {
         self.category = try container.decode(Int.self, forKey: .category)
         self.title = try container.decode(String.self, forKey: .title)
         self.emoji = try container.decode(String.self, forKey: .emoji)
-        self.isChecked = try container.decodeIfPresent(Bool.self, forKey: .isChecked) ?? true
+        self.isSelected = try container.decodeIfPresent(Bool.self, forKey: .isSelected) ?? true
     }
     
     mutating func toggle() {
-        isChecked = !isChecked
+        isSelected = !isSelected
     }
 }

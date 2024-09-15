@@ -27,27 +27,31 @@ enum TabItemType: Int, CaseIterable {
         case .tasks: return "checklist"
         }
     }
+    
+    var scrollToTopEvent: NSNotification {
+        NSNotification(name: .init("ScrollToTop\(rawValue)"), object: nil)
+    }
 }
 
 // MARK: - ViewModifier
 private struct TabItemViewModifier: ViewModifier {
     var type: TabItemType
-
     @State var isSelected: Bool = false
     
     func body(content: Content) -> some View {
         content
             .tabItem {
-                VStack(alignment: .center) {
+                Button(action: {
+                    // nothing to do
+                }, label: {
                     Image(systemName: type.icon)
                         .font(.system(size: 24))
                     Text(type.title)
                         .font(.caption)
-                }
-                .jumpEffect(isActive: $isSelected)
+                })
+                .contentShape(Rectangle())
             }
             .tag(type)
-            .bounceEffect(isActive: $isSelected)
     }
 }
 

@@ -13,7 +13,9 @@ struct MainTabView: View {
     @State var selection: TabItemType
     
     var body: some View {
-        TabView(selection: $selection) {
+        TabView(selection: $selection.onUpdate {
+            NotificationCenter.default.post(Notification(name: selection.scrollToTopEvent.name))
+        }) {
             CalendarView()
                 .tabItemStyle(.calendar, isSelected: selection == .calendar)
             ShoppingListView()
@@ -31,6 +33,18 @@ struct MainTabView: View {
             viewModel.selectedTab = selection
             viewModel.savePreferences()
         }
+    }
+}
+
+// MARK: - TabItemTap
+private extension Binding {
+    func onUpdate(_ closure: @escaping () -> Void) -> Binding<Value> {
+        Binding(get: {
+            wrappedValue
+        }, set: { newValue in
+            wrappedValue = newValue
+            closure()
+        })
     }
 }
 

@@ -15,16 +15,4 @@ enum ShoppingCategory: Int, CaseIterable {
     case higiene = 4
     case house = 5
     case basket         // lista general, siempre al final
-    
-    var title: String {
-        switch self {
-        case .pending: return "Pendientes"
-        case .food: return "Comida"
-        case .fruits: return "Frutas y Vegetales"
-        case .cleaning: return "Limpieza"
-        case .higiene: return "Higiene"
-        case .house: return "Hogar"
-        case .basket: return "Lista"
-        }
-    }
 }

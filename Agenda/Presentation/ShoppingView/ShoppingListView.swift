@@ -28,7 +28,8 @@ struct ShoppingListView: View {
                                 ShoppingListHeaderView(
                                     title: key.title,
                                     numberOfItems: groups[key]?.count ?? 0,
-                                    isExpanded: shouldShowCategory(key)
+                                    isExpanded: shouldShowCategory(key),
+                                    badgeColor: key.badgeColor
                                 ).onTapGesture {
                                     withAnimation {
                                         isExpanded[key.rawValue].toggle()

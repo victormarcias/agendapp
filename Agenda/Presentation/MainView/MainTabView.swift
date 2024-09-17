@@ -17,11 +17,11 @@ struct MainTabView: View {
             NotificationCenter.default.post(Notification(name: selection.scrollToTopEvent.name))
         }) {
             CalendarView()
-                .tabItemStyle(.calendar, isSelected: selection == .calendar)
+                .tabNavigationViewStyle(.calendar, isSelected: selection == .calendar)
             ShoppingListView()
-                .tabItemStyle(.shopping, isSelected: selection == .shopping)
+                .tabNavigationViewStyle(.shopping, isSelected: selection == .shopping)
             TaskView()
-                .tabItemStyle(.tasks, isSelected: selection == .tasks)
+                .tabNavigationViewStyle(.tasks, isSelected: selection == .tasks)
         }
         .id(UUID())
         .onAppear {

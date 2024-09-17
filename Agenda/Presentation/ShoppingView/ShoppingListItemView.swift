@@ -33,6 +33,7 @@ struct ShoppingListItemView: View {
                 Spacer()
                 CheckmarkView(size: 20, isChecked: item.isSelected)
                     .padding(.trailing, 4)
+                    .opacity(0.5)
             }
             .contentShape(Rectangle())
             .frame(height: 55)

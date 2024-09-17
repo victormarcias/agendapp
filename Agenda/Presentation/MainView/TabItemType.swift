@@ -39,24 +39,28 @@ private struct TabItemViewModifier: ViewModifier {
     @State var isSelected: Bool = false
     
     func body(content: Content) -> some View {
-        content
-            .tabItem {
-                Button(action: {
-                    // nothing to do
-                }, label: {
-                    Image(systemName: type.icon)
-                        .font(.system(size: 24))
-                    Text(type.title)
-                        .font(.caption)
-                })
-                .contentShape(Rectangle())
-            }
-            .tag(type)
+        NavigationView {
+            content
+                .navigationTitle(type.title)
+                .navigationBarTitleDisplayMode(.large)
+        }
+        .tabItem {
+            Button(action: {
+                // nothing to do
+            }, label: {
+                Image(systemName: type.icon)
+                    .font(.system(size: 24))
+                Text(type.title)
+                    .font(.caption)
+            })
+            .contentShape(Rectangle())
+        }
+        .tag(type)
     }
 }
 
 extension View {
-    func tabItemStyle(_ type: TabItemType, isSelected: Bool) -> some View {
+    func tabNavigationViewStyle(_ type: TabItemType, isSelected: Bool) -> some View {
         modifier(TabItemViewModifier(type: type, isSelected: isSelected))
     }
 }

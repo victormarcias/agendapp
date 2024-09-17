@@ -28,7 +28,7 @@ struct ShoppingListHeaderView: View {
                 Text(String(describing: numberOfItems))
                     .foregroundColor(.white)
                     .font(.footnote)
-                    .bold()
+                    .fontWeight(.semibold)
             }
             .frame(height: 44)
             

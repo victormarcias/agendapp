@@ -9,13 +9,38 @@ import Combine
 import Foundation
 
 final class ShoppingListViewModel: ObservableObject {
+    
     @Published var items: [ShoppingItem] = []
     @Published var categoryToggles: [Bool] = Array(repeating: false,
                                                    count: ShoppingCategory.allCases.count)
+    @Published var showCategories: Bool = false
+    
+    /// Storage
     private var storage = Storage()
 
+    /// Init
     init() {
-        loadStoredItems()
+        loadViewState()
+    }
+    
+    private func loadViewState() {
+        // Load last selections
+        items = storage.object(for: .shoppingItems) ?? []
+        
+        // Category toggles
+        if let categories: [Bool] = storage.object(for: .shoppingToggles) {
+            categoryToggles = categories
+        }
+        // Categories
+        showCategories = storage.object(for: .shoppingCategories) ?? false
+        
+        // Load Card Template
+        guard items.isEmpty else { return }
+        items = loadTemplateItems(from: "CartTemplate") ?? []
+    }
+    
+    func update() {
+        loadViewState()
     }
     
     func selectItem(_ item: ShoppingItem) {
@@ -30,19 +55,6 @@ final class ShoppingListViewModel: ObservableObject {
     func toggleCategory(_ category: ShoppingCategory) {
         categoryToggles[category.rawValue].toggle()
         saveSelections()
-    }
-    
-    private func loadStoredItems() {
-        // Cargar los items desde UserDefaults
-        items = storage.object(for: .shoppingItems) ?? []
-        
-        if let categories: [Bool] = storage.object(for: .shoppingToggles) {
-            categoryToggles = categories
-        }
-        
-        // Sino el Template
-        guard items.isEmpty else { return }
-        items = loadTemplateItems(from: "CartTemplate") ?? []
     }
     
     private func saveSelections() {

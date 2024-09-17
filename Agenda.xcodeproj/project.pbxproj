@@ -12,6 +12,8 @@
 		041D57E62C97132F004B5527 /* ShoppingListGroupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D57E52C97132F004B5527 /* ShoppingListGroupType.swift */; };
 		041D57EA2C9716E4004B5527 /* ShoppingListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D57E92C9716E4004B5527 /* ShoppingListHeaderView.swift */; };
 		0462032B2C99B51700E87E19 /* ShoppingCategoryStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462032A2C99B51700E87E19 /* ShoppingCategoryStyle.swift */; };
+		0462032D2C9A178700E87E19 /* ShoppingListSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462032C2C9A178700E87E19 /* ShoppingListSettingsView.swift */; };
+		0462032F2C9A278C00E87E19 /* ShoppingListSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462032E2C9A278C00E87E19 /* ShoppingListSettingsViewModel.swift */; };
 		0465BB0C2C6BB3DE00AF9031 /* AgendaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */; };
 		0465BB0E2C6BB3DE00AF9031 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB0D2C6BB3DE00AF9031 /* MainTabView.swift */; };
 		0465BB102C6BB3DF00AF9031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0465BB0F2C6BB3DF00AF9031 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		041D57E52C97132F004B5527 /* ShoppingListGroupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListGroupType.swift; sourceTree = "<group>"; };
 		041D57E92C9716E4004B5527 /* ShoppingListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListHeaderView.swift; sourceTree = "<group>"; };
 		0462032A2C99B51700E87E19 /* ShoppingCategoryStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCategoryStyle.swift; sourceTree = "<group>"; };
+		0462032C2C9A178700E87E19 /* ShoppingListSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListSettingsView.swift; sourceTree = "<group>"; };
+		0462032E2C9A278C00E87E19 /* ShoppingListSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListSettingsViewModel.swift; sourceTree = "<group>"; };
 		0465BB082C6BB3DE00AF9031 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaApp.swift; sourceTree = "<group>"; };
 		0465BB0D2C6BB3DE00AF9031 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,27 @@
 				0462032A2C99B51700E87E19 /* ShoppingCategoryStyle.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		046203302C9A384500E87E19 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				041D57E52C97132F004B5527 /* ShoppingListGroupType.swift */,
+				041D57E92C9716E4004B5527 /* ShoppingListHeaderView.swift */,
+				04B892F52C84ED4600BAB78E /* ShoppingListItemView.swift */,
+				0465BB212C6BBD5B00AF9031 /* ShoppingListView.swift */,
+				0465BB272C6BBDB900AF9031 /* ShoppingListViewModel.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
+		046203312C9A384C00E87E19 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0462032C2C9A178700E87E19 /* ShoppingListSettingsView.swift */,
+				0462032E2C9A278C00E87E19 /* ShoppingListSettingsViewModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		0465BAFF2C6BB3DE00AF9031 = {
@@ -196,11 +221,8 @@
 		0465BB1E2C6BBD2D00AF9031 /* ShoppingView */ = {
 			isa = PBXGroup;
 			children = (
-				041D57E52C97132F004B5527 /* ShoppingListGroupType.swift */,
-				041D57E92C9716E4004B5527 /* ShoppingListHeaderView.swift */,
-				04B892F52C84ED4600BAB78E /* ShoppingListItemView.swift */,
-				0465BB212C6BBD5B00AF9031 /* ShoppingListView.swift */,
-				0465BB272C6BBDB900AF9031 /* ShoppingListViewModel.swift */,
+				046203302C9A384500E87E19 /* ListView */,
+				046203312C9A384C00E87E19 /* Settings */,
 			);
 			path = ShoppingView;
 			sourceTree = "<group>";
@@ -372,6 +394,8 @@
 				041D57E62C97132F004B5527 /* ShoppingListGroupType.swift in Sources */,
 				041D57EA2C9716E4004B5527 /* ShoppingListHeaderView.swift in Sources */,
 				04B892F62C84ED4600BAB78E /* ShoppingListItemView.swift in Sources */,
+				0462032D2C9A178700E87E19 /* ShoppingListSettingsView.swift in Sources */,
+				0462032F2C9A278C00E87E19 /* ShoppingListSettingsViewModel.swift in Sources */,
 				0465BB222C6BBD5B00AF9031 /* ShoppingListView.swift in Sources */,
 				0465BB282C6BBDB900AF9031 /* ShoppingListViewModel.swift in Sources */,
 				04B892FC2C84F14D00BAB78E /* Storage.swift in Sources */,

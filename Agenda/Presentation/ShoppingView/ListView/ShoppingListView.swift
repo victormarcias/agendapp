@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ShoppingListView: View {
     @ObservedObject var viewModel = ShoppingListViewModel()
-    private static var scrollTopId = "scrollTopId"
     
     private var groups: [ShoppingCategory: [ShoppingItem]] {
-        viewModel.items.grouped(by: .selectionGrouped)
+        if viewModel.showCategories {
+            viewModel.items.grouped(by: .selectionGrouped)
+        } else {
+            viewModel.items.grouped(by: .selectionUncategorized)
+        }
     }
     
     var body: some View {
@@ -47,6 +50,9 @@ struct ShoppingListView: View {
                 }
                 .padding(20)
             }
+            .navigationBarItems(trailing: ShoppingListSettingsView {
+                viewModel.update()
+            })
             .onReceive(NotificationCenter.default.publisher(for: TabItemType.shopping.scrollToTopEvent.name)) { _ in
                 withAnimation {
                     reader.scrollTo(0, anchor: .top)

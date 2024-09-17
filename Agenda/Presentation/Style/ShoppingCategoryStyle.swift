@@ -24,9 +24,9 @@ extension ShoppingCategory {
     var badgeColor: Color {
         switch self {
         case .pending:
-            return .red
-        case .food, .fruits, .cleaning, .higiene, .house:
             return .orange
+        case .food, .fruits, .cleaning, .higiene, .house:
+            return .gray
         case .basket:
             return .gray
         }

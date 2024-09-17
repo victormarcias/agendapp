@@ -9,12 +9,10 @@ import SwiftUI
 
 struct ShoppingListView: View {
     @ObservedObject var viewModel = ShoppingListViewModel()
-    @State var isExpanded: [Bool] = Array(repeating: true, count: ShoppingCategory.allCases.count)
-    
     private static var scrollTopId = "scrollTopId"
     
     private var groups: [ShoppingCategory: [ShoppingItem]] {
-        viewModel.sortedItems
+        viewModel.items.grouped(by: .selectionGrouped)
     }
     
     var body: some View {
@@ -32,7 +30,7 @@ struct ShoppingListView: View {
                                     badgeColor: key.badgeColor
                                 ).onTapGesture {
                                     withAnimation {
-                                        isExpanded[key.rawValue].toggle()
+                                        viewModel.toggleCategory(key)
                                     }
                                 }
                                 
@@ -58,6 +56,6 @@ struct ShoppingListView: View {
     }
     
     private func shouldShowCategory(_ category: ShoppingCategory) -> Bool {
-        isExpanded[category.rawValue]
+        viewModel.categoryToggles[category.rawValue]
     }
 }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		041AB6B42C8372C600854659 /* MainTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AB6B32C8372C600854659 /* MainTabViewModel.swift */; };
 		041AB6B82C83768400854659 /* TabItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AB6B72C83768400854659 /* TabItemType.swift */; };
-		041D57E62C97132F004B5527 /* ShoppingListSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D57E52C97132F004B5527 /* ShoppingListSortType.swift */; };
+		041D57E62C97132F004B5527 /* ShoppingListGroupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D57E52C97132F004B5527 /* ShoppingListGroupType.swift */; };
 		041D57EA2C9716E4004B5527 /* ShoppingListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D57E92C9716E4004B5527 /* ShoppingListHeaderView.swift */; };
 		0462032B2C99B51700E87E19 /* ShoppingCategoryStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462032A2C99B51700E87E19 /* ShoppingCategoryStyle.swift */; };
 		0465BB0C2C6BB3DE00AF9031 /* AgendaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465BB0B2C6BB3DE00AF9031 /* AgendaApp.swift */; };
@@ -41,7 +41,7 @@
 		0409C5DD2C6BF48400EB5CE1 /* sort-xcode-project-files.pl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.perl; path = "sort-xcode-project-files.pl"; sourceTree = "<group>"; };
 		041AB6B32C8372C600854659 /* MainTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewModel.swift; sourceTree = "<group>"; };
 		041AB6B72C83768400854659 /* TabItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemType.swift; sourceTree = "<group>"; };
-		041D57E52C97132F004B5527 /* ShoppingListSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListSortType.swift; sourceTree = "<group>"; };
+		041D57E52C97132F004B5527 /* ShoppingListGroupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListGroupType.swift; sourceTree = "<group>"; };
 		041D57E92C9716E4004B5527 /* ShoppingListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListHeaderView.swift; sourceTree = "<group>"; };
 		0462032A2C99B51700E87E19 /* ShoppingCategoryStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCategoryStyle.swift; sourceTree = "<group>"; };
 		0465BB082C6BB3DE00AF9031 /* Agenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,9 +196,9 @@
 		0465BB1E2C6BBD2D00AF9031 /* ShoppingView */ = {
 			isa = PBXGroup;
 			children = (
+				041D57E52C97132F004B5527 /* ShoppingListGroupType.swift */,
 				041D57E92C9716E4004B5527 /* ShoppingListHeaderView.swift */,
 				04B892F52C84ED4600BAB78E /* ShoppingListItemView.swift */,
-				041D57E52C97132F004B5527 /* ShoppingListSortType.swift */,
 				0465BB212C6BBD5B00AF9031 /* ShoppingListView.swift */,
 				0465BB272C6BBDB900AF9031 /* ShoppingListViewModel.swift */,
 			);
@@ -360,7 +360,6 @@
 				0465BB312C6BC0E200AF9031 /* CalendarItem.swift in Sources */,
 				0465BB202C6BBD5400AF9031 /* CalendarView.swift in Sources */,
 				0465BB2B2C6BC09D00AF9031 /* CalendarViewModel.swift in Sources */,
-				0462032B2C99B51700E87E19 /* ShoppingCategoryStyle.swift in Sources */,
 				04B150612C7B92DA00942A1C /* CheckmarkView.swift in Sources */,
 				04E3F3362C851AEF003D6682 /* DevicelessPreview.swift in Sources */,
 				04B893002C850DF600BAB78E /* JumpingEffect.swift in Sources */,
@@ -368,10 +367,11 @@
 				041AB6B42C8372C600854659 /* MainTabViewModel.swift in Sources */,
 				04EFD88B2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift in Sources */,
 				04D968982C972394004E18B6 /* ShoppingCategory.swift in Sources */,
+				0462032B2C99B51700E87E19 /* ShoppingCategoryStyle.swift in Sources */,
 				0465BB2D2C6BC0AF00AF9031 /* ShoppingItem.swift in Sources */,
+				041D57E62C97132F004B5527 /* ShoppingListGroupType.swift in Sources */,
 				041D57EA2C9716E4004B5527 /* ShoppingListHeaderView.swift in Sources */,
 				04B892F62C84ED4600BAB78E /* ShoppingListItemView.swift in Sources */,
-				041D57E62C97132F004B5527 /* ShoppingListSortType.swift in Sources */,
 				0465BB222C6BBD5B00AF9031 /* ShoppingListView.swift in Sources */,
 				0465BB282C6BBDB900AF9031 /* ShoppingListViewModel.swift in Sources */,
 				04B892FC2C84F14D00BAB78E /* Storage.swift in Sources */,

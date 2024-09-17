@@ -10,12 +10,10 @@ import Foundation
 
 final class ShoppingListViewModel: ObservableObject {
     @Published var items: [ShoppingItem] = []
+    @Published var categoryToggles: [Bool] = Array(repeating: false,
+                                                   count: ShoppingCategory.allCases.count)
     private var storage = Storage()
 
-    var sortedItems: [ShoppingCategory: [ShoppingItem]] {
-        items.sorted(by: .selectionUncategorized)
-    }
-    
     init() {
         loadStoredItems()
     }
@@ -25,20 +23,30 @@ final class ShoppingListViewModel: ObservableObject {
             var mutableItem = item
             mutableItem.toggle()
             items[index] = mutableItem
-            saveItems()
+            saveSelections()
         }
+    }
+    
+    func toggleCategory(_ category: ShoppingCategory) {
+        categoryToggles[category.rawValue].toggle()
+        saveSelections()
     }
     
     private func loadStoredItems() {
         // Cargar los items desde UserDefaults
         items = storage.object(for: .shoppingItems) ?? []
         
+        if let categories: [Bool] = storage.object(for: .shoppingToggles) {
+            categoryToggles = categories
+        }
+        
         // Sino el Template
         guard items.isEmpty else { return }
         items = loadTemplateItems(from: "CartTemplate") ?? []
     }
     
-    private func saveItems() {
+    private func saveSelections() {
+        storage.save(categoryToggles, for: .shoppingToggles)
         storage.save(items, for: .shoppingItems)
     }
 }

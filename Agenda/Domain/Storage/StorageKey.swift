@@ -11,6 +11,7 @@ import Foundation
 enum StorageKey: String, CaseIterable {
     case calendarItems = "calendar.items"
     case shoppingItems = "shopping.items"
+    case shoppingToggles = "shopping.category.toggles"
     case taskItems = "tasks.cartItems"
 
     var value: String { rawValue }

@@ -30,7 +30,7 @@ struct ShoppingListHeaderView: View {
                     .font(.footnote)
                     .bold()
             }
-            .frame(height: 50)
+            .frame(height: 44)
             
             Spacer()
             Image(systemName: isExpanded ? "chevron.up" : "chevron.down")

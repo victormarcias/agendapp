@@ -40,6 +40,12 @@ struct Storage {
             print("Failed to save \(item) with key: \(key.rawValue)")
         }
     }
+    
+    /// Método para borrar el contenido
+    func erase(_ key: StorageKey) {
+        UserDefaults.standard.set(nil, forKey: key.rawValue)
+        UserDefaults.standard.synchronize()
+    }
 }
 
 // MARK: - Enums

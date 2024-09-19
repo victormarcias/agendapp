@@ -12,6 +12,7 @@ struct ShoppingListHeaderView: View {
     var numberOfItems: Int
     var isExpanded: Bool
     var badgeColor: Color
+    var height: Double = 44
     
     var body: some View {
         HStack(alignment: .center) {
@@ -20,6 +21,7 @@ struct ShoppingListHeaderView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
                 .opacity(0.75)
+            Spacer()
             ZStack {
                 RoundedRectangle(cornerRadius: 12, style: .circular)
                     .frame(width: 35, height: 22)
@@ -30,13 +32,13 @@ struct ShoppingListHeaderView: View {
                     .font(.footnote)
                     .fontWeight(.semibold)
             }
-            .frame(height: 44)
+            .frame(height: height)
             
-            Spacer()
             Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                 .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.accentColor)
                 .opacity(0.6)
+                .padding(.leading, 10)
         }
         .contentShape(Rectangle())
         .padding(.horizontal, 20)

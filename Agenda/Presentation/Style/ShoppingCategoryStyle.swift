@@ -12,10 +12,11 @@ extension ShoppingCategory {
     var title: String {
         switch self {
         case .pending: return "Pendientes"
-        case .food: return "Comida"
-        case .fruits: return "Frutas y Vegetales"
-        case .cleaning: return "Limpieza"
+        case .cooking: return "Cocina"
+        case .drinks: return "Bebidas"
+        case .fruits: return "Frutas y verduras"
         case .higiene: return "Higiene"
+        case .cleaning: return "Limpieza"
         case .house: return "Hogar"
         case .basket: return "Lista"
         }
@@ -25,10 +26,14 @@ extension ShoppingCategory {
         switch self {
         case .pending:
             return .orange
-        case .food, .fruits, .cleaning, .higiene, .house:
+        case .cooking, .drinks, .fruits, .higiene, .cleaning, .house:
             return .gray
         case .basket:
             return .gray
         }
+    }
+    
+    var headerHeight: Double {
+        self == .pending ? 60 : 44
     }
 }

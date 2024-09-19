@@ -37,7 +37,8 @@ extension Array where Element == ShoppingItem {
         
         return [
             .pending: pending,
-            .food: list.filter { $0.category == ShoppingCategory.food.rawValue },
+            .cooking: list.filter { $0.category == ShoppingCategory.cooking.rawValue },
+            .drinks: list.filter { $0.category == ShoppingCategory.drinks.rawValue },
             .fruits: list.filter { $0.category == ShoppingCategory.fruits.rawValue },
             .higiene: list.filter { $0.category == ShoppingCategory.higiene.rawValue },
             .cleaning: list.filter { $0.category == ShoppingCategory.cleaning.rawValue },

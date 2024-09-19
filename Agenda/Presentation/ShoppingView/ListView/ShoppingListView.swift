@@ -30,7 +30,8 @@ struct ShoppingListView: View {
                                     title: key.title,
                                     numberOfItems: groups[key]?.count ?? 0,
                                     isExpanded: shouldShowCategory(key),
-                                    badgeColor: key.badgeColor
+                                    badgeColor: key.badgeColor,
+                                    height: key.headerHeight
                                 ).onTapGesture {
                                     withAnimation {
                                         viewModel.toggleCategory(key)
@@ -62,6 +63,10 @@ struct ShoppingListView: View {
     }
     
     private func shouldShowCategory(_ category: ShoppingCategory) -> Bool {
-        viewModel.categoryToggles[category.rawValue]
+        if category.rawValue < viewModel.categoryToggles.count {
+            return viewModel.categoryToggles[category.rawValue]
+        } else {
+            return false
+        }
     }
 }

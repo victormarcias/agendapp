@@ -9,10 +9,11 @@ import Foundation
 
 enum ShoppingCategory: Int, CaseIterable {
     case pending = 0    // marcados para comprar
-    case food = 1
-    case fruits = 2
-    case cleaning = 3
+    case cooking = 1
+    case drinks = 2
+    case fruits = 3
     case higiene = 4
-    case house = 5
+    case cleaning = 5
+    case house = 6
     case basket         // lista general, siempre al final
 }

@@ -22,10 +22,10 @@ extension ShoppingCategory {
         }
     }
     
-    var badgeColor: Color {
+    func badgeColor(_ itemCount: Int = 0) -> Color {
         switch self {
         case .pending:
-            return .orange
+            return itemCount > 0 ? .red : .green
         case .cooking, .drinks, .fruits, .higiene, .cleaning, .house:
             return .gray
         case .basket:

@@ -24,6 +24,7 @@ struct ShoppingListItemView: View {
                 Text(item.emoji)
                     .font(.title)
                     .fixedSize(horizontal: false, vertical: true)
+                    .opacity(item.isSelected ? 0.80 : 1.00)
                 Text(item.title)
                     .font(.subheadline)
                     .fontWeight(.semibold)
@@ -33,7 +34,7 @@ struct ShoppingListItemView: View {
                 Spacer()
                 CheckmarkView(size: 20, isChecked: item.isSelected)
                     .padding(.trailing, 4)
-                    .opacity(0.5)
+                    .opacity(0.70)
             }
             .contentShape(Rectangle())
             .frame(height: 55)
@@ -43,7 +44,6 @@ struct ShoppingListItemView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(.tertiary, lineWidth: 1)
             }
-            .opacity(item.isSelected ? 0.70 : 1.00)
         })
         .onPressScale(0.95)
     }

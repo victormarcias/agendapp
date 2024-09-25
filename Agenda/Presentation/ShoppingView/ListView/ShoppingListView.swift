@@ -26,11 +26,12 @@ struct ShoppingListView: View {
                         .sorted(by: { $0.rawValue < $1.rawValue }), id:\.rawValue) { key in
                             
                             Section {
+                                let numberOfItems = groups[key]?.count ?? 0
                                 ShoppingListHeaderView(
                                     title: key.title,
-                                    numberOfItems: groups[key]?.count ?? 0,
+                                    numberOfItems: numberOfItems,
                                     isExpanded: shouldShowCategory(key),
-                                    badgeColor: key.badgeColor,
+                                    badgeColor: key.badgeColor(numberOfItems),
                                     height: key.headerHeight
                                 ).onTapGesture {
                                     withAnimation {

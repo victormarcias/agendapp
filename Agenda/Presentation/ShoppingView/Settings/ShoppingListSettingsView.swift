@@ -38,7 +38,7 @@ struct ShoppingListSettingsView: View {
                 }
             }
         } label: {
-            Image(systemName: "gearshape")
+            Image(systemName: "ellipsis.circle")
                 .resizable()
                 .frame(width: 24, height: 24)
                 .foregroundColor(.accentColor)

@@ -36,6 +36,7 @@ struct ShoppingListView: View {
                                 ).onTapGesture {
                                     withAnimation {
                                         viewModel.toggleCategory(key)
+                                        Haptics.feedback()
                                     }
                                 }
                                 
@@ -43,6 +44,7 @@ struct ShoppingListView: View {
                                     ForEach(items) { item in
                                         ShoppingListItemView(item: item) {
                                             viewModel.selectItem(item)
+                                            Haptics.feedback()
                                         }
                                         .id(UUID())
                                     }

@@ -37,6 +37,7 @@
 		04D968982C972394004E18B6 /* ShoppingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D968972C972394004E18B6 /* ShoppingCategory.swift */; };
 		04E3F3362C851AEF003D6682 /* DevicelessPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3F3352C851AEF003D6682 /* DevicelessPreview.swift */; };
 		04EFD88B2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EFD88A2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift */; };
+		04F3586D2CC434B40042DADA /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F3586C2CC434B40042DADA /* Haptics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		04D968972C972394004E18B6 /* ShoppingCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCategory.swift; sourceTree = "<group>"; };
 		04E3F3352C851AEF003D6682 /* DevicelessPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicelessPreview.swift; sourceTree = "<group>"; };
 		04EFD88A2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
+		04F3586C2CC434B40042DADA /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 				04B892FD2C850CE800BAB78E /* BounceEffect.swift */,
 				04B150602C7B92DA00942A1C /* CheckmarkView.swift */,
 				04E3F3352C851AEF003D6682 /* DevicelessPreview.swift */,
+				04F3586C2CC434B40042DADA /* Haptics.swift */,
 				04B892FF2C850DF600BAB78E /* JumpingEffect.swift */,
 				04EFD88A2C7D0CD7002DF9F7 /* ScaleButtonStyle.swift */,
 			);
@@ -377,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F3586D2CC434B40042DADA /* Haptics.swift in Sources */,
 				0465BB0C2C6BB3DE00AF9031 /* AgendaApp.swift in Sources */,
 				04B892FE2C850CE800BAB78E /* BounceEffect.swift in Sources */,
 				0465BB312C6BC0E200AF9031 /* CalendarItem.swift in Sources */,
@@ -462,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -519,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -556,6 +560,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -589,6 +594,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

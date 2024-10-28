@@ -94,10 +94,10 @@
         { "cat": 5, "title": "Suavizante para ropa", "emoji": "🧺" },
         { "cat": 5, "title": "Trapo", "emoji": "🧹" },
 
-        { "cat": 6, "title": "Baterías", "emoji": "🪫" },
-        { "cat": 6, "title": "Cinta", "emoji": "🎞️" },
-        { "cat": 6, "title": "Destapa cañerías", "emoji": "🪠" },
-        { "cat": 6, "title": "Escobillón", "emoji": "🧹" },
-        { "cat": 6, "title": "Lámpara", "emoji": "💡" }
+        { "cat": 5, "title": "Baterías", "emoji": "🪫" },
+        { "cat": 5, "title": "Cinta", "emoji": "🎞️" },
+        { "cat": 5, "title": "Destapa cañerías", "emoji": "🪠" },
+        { "cat": 5, "title": "Escobillón", "emoji": "🧹" },
+        { "cat": 5, "title": "Lámpara", "emoji": "💡" }
     ]
 }

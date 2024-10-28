@@ -16,9 +16,8 @@ extension ShoppingCategory {
         case .drinks: return "Bebidas"
         case .fruits: return "Frutas y verduras"
         case .higiene: return "Higiene"
-        case .cleaning: return "Limpieza"
-        case .house: return "Hogar"
-        case .basket: return "Lista"
+        case .house: return "Hogar y limpieza"
+        case .cart: return "Lista"
         }
     }
     
@@ -26,9 +25,9 @@ extension ShoppingCategory {
         switch self {
         case .pending:
             return itemCount > 0 ? .red : .green
-        case .cooking, .drinks, .fruits, .higiene, .cleaning, .house:
+        case .cooking, .drinks, .fruits, .higiene, .house:
             return .gray
-        case .basket:
+        case .cart:
             return .gray
         }
     }

@@ -27,7 +27,7 @@ extension Array where Element == ShoppingItem {
         let sorted = sorted { $0.title < $1.title }
         return [
             .pending: sorted.filter { !$0.isSelected },
-            .basket: sorted.filter { $0.isSelected }
+            .cart: sorted.filter { $0.isSelected }
         ]
     }
     
@@ -41,7 +41,6 @@ extension Array where Element == ShoppingItem {
             .drinks: list.filter { $0.category == ShoppingCategory.drinks.rawValue },
             .fruits: list.filter { $0.category == ShoppingCategory.fruits.rawValue },
             .higiene: list.filter { $0.category == ShoppingCategory.higiene.rawValue },
-            .cleaning: list.filter { $0.category == ShoppingCategory.cleaning.rawValue },
             .house: list.filter { $0.category == ShoppingCategory.house.rawValue }
         ]
     }

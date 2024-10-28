@@ -13,7 +13,6 @@ enum ShoppingCategory: Int, CaseIterable {
     case drinks = 2
     case fruits = 3
     case higiene = 4
-    case cleaning = 5
-    case house = 6
-    case basket         // lista general, siempre al final
+    case house = 5
+    case cart         // lista general, siempre al final
 }
